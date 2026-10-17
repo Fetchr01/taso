@@ -1,0 +1,234 @@
+{
+  "taso": "0.1",
+  "kind": "project",
+  "id": "01J9ZK7Q2M4F8T1XQ2V9H6N3PC",
+  "title": "Nginx asennus Ubuntu 24.04:lle",
+  "lang": "fi",
+  "created": "2026-10-17T09:12:00Z",
+  "modified": "2026-10-17T13:40:12Z",
+  "aspect": [16, 9],
+  "fps": 30,
+
+  "sources": {
+    "screen-01": {
+      "kind": "video",
+      "src": "file:///Users/lauri/Taso/nginx/ruutu_01.mp4",
+      "duration": 362000,
+      "size": [2560, 1440],
+      "hash": "sha256:5a1f…c9e0",
+      "proxy": "file:///Users/lauri/Taso/nginx/.taso/proxy/ruutu_01.mp4"
+    },
+    "screen-02": {
+      "kind": "video",
+      "src": "file:///Users/lauri/Taso/nginx/ruutu_02.mp4",
+      "duration": 410000,
+      "size": [2560, 1440],
+      "hash": "sha256:8b22…41aa",
+      "proxy": "file:///Users/lauri/Taso/nginx/.taso/proxy/ruutu_02.mp4"
+    },
+    "camera": {
+      "kind": "video",
+      "src": "file:///Users/lauri/Taso/nginx/kamera.mp4",
+      "duration": 772000,
+      "size": [1920, 1080],
+      "hash": "sha256:c0de…77f1"
+    },
+    "mic": {
+      "kind": "audio",
+      "src": "file:///Users/lauri/Taso/nginx/mic.wav",
+      "duration": 772000,
+      "hash": "sha256:19d4…b002"
+    },
+    "term": {
+      "kind": "terminal",
+      "src": "file:///Users/lauri/Taso/nginx/terminaali.cast",
+      "duration": 760000,
+      "cols": 100,
+      "rows": 28,
+      "hash": "sha256:e3a9…0c4d"
+    },
+    "config-diagram": {
+      "kind": "image",
+      "src": "file:///Users/lauri/Taso/nginx/nginx-config.png",
+      "size": [3840, 2160],
+      "hash": "sha256:7f7f…ab12"
+    }
+  },
+
+  "timeline": [
+    {
+      "id": "screen",
+      "kind": "video",
+      "clips": [
+        { "id": "c1", "source": "screen-01", "in": 4000,  "out": 362000, "at": 0 },
+        { "id": "c2", "source": "screen-02", "in": 0,     "out": 402000, "at": 358000 }
+      ],
+      "frame": { "x": 0.06, "y": 0.09, "w": 0.60, "h": 0.74, "radius": 0.012 },
+      "zooms": [
+        { "start": 276000, "end": 300000, "box": { "x": 0.08, "y": 0.52, "w": 0.40, "h": 0.22 } }
+      ]
+    },
+    {
+      "id": "terminal",
+      "kind": "terminal",
+      "clips": [
+        { "id": "t1", "source": "term", "in": 0, "out": 760000, "at": 0 }
+      ],
+      "frame": { "x": 0.06, "y": 0.09, "w": 0.60, "h": 0.74 },
+      "theme": "taso-dark",
+      "visible": false,
+      "note": "Piilotettu raita: ruutukaappaus näyttää saman terminaalin. Komennot tunnistetaan tästä raidasta."
+    },
+    {
+      "id": "camera",
+      "kind": "video",
+      "clips": [
+        { "id": "k1", "source": "camera", "in": 12000, "out": 772000, "at": 0 }
+      ],
+      "frame": { "x": 0.96, "y": 0.86, "w": 0.15, "aspect": 1, "anchor": "bottom-right", "shape": "circle" }
+    },
+    {
+      "id": "voice",
+      "kind": "audio",
+      "clips": [
+        { "id": "a1", "source": "mic", "in": 12000, "out": 772000, "at": 0, "gain": 0 }
+      ]
+    },
+    {
+      "id": "layers",
+      "kind": "overlay",
+      "items": [
+        {
+          "id": "cmd-update",
+          "type": "command",
+          "start": 42000,
+          "end": 88500,
+          "content": "sudo apt update",
+          "origin": { "source": "term", "t": 41800 },
+          "style": "command",
+          "box": { "x": 0.06, "y": 0.86, "w": 0.30, "h": 0.07, "anchor": "bottom-left" },
+          "action": { "kind": "copy" },
+          "list": true
+        },
+        {
+          "id": "cmd-install",
+          "type": "command",
+          "start": 276200,
+          "end": 358000,
+          "content": "sudo apt install nginx",
+          "origin": { "source": "term", "t": 276100 },
+          "style": "command",
+          "box": { "x": 0.06, "y": 0.86, "w": 0.34, "h": 0.07, "anchor": "bottom-left" },
+          "action": { "kind": "copy" },
+          "list": true
+        },
+        {
+          "id": "link-docs",
+          "type": "link",
+          "start": 390000,
+          "end": 505000,
+          "content": "nginx.org/docs",
+          "label": "Nginx-dokumentaatio",
+          "href": "https://nginx.org/en/docs/",
+          "style": "link",
+          "box": { "x": 0.96, "y": 0.09, "w": 0.18, "h": 0.06, "anchor": "top-right" },
+          "action": { "kind": "open" },
+          "list": true
+        },
+        {
+          "id": "img-config",
+          "type": "image",
+          "start": 412000,
+          "end": 468000,
+          "source": "config-diagram",
+          "content": "Nginx-konfiguraation rakenne",
+          "alt": "Kaavio nginx.conf-tiedoston rakenteesta: http, server ja location -lohkot",
+          "box": { "x": 0.70, "y": 0.22, "w": 0.26, "anchor": "top-left" },
+          "action": { "kind": "expand" },
+          "list": true
+        },
+        {
+          "id": "cmd-systemctl",
+          "type": "command",
+          "start": 560000,
+          "end": 620000,
+          "content": "sudo systemctl enable --now nginx",
+          "origin": { "source": "term", "t": 559900 },
+          "style": "command",
+          "box": { "x": 0.06, "y": 0.86, "w": 0.42, "h": 0.07, "anchor": "bottom-left" },
+          "action": { "kind": "copy" },
+          "list": true
+        },
+        {
+          "id": "mention-nginx",
+          "type": "mention",
+          "start": 700000,
+          "end": 740000,
+          "content": "@nginx",
+          "handle": { "platform": "x", "id": "nginx" },
+          "style": "caption",
+          "box": { "x": 0.06, "y": 0.09, "w": 0.12, "h": 0.05, "anchor": "top-left" },
+          "action": { "kind": "open" },
+          "list": true
+        },
+        {
+          "id": "hotspot-browser",
+          "type": "hotspot",
+          "start": 630000,
+          "end": 690000,
+          "render": false,
+          "content": "Avaa http://localhost selaimessa",
+          "href": "http://localhost",
+          "box": { "x": 0.06, "y": 0.09, "w": 0.60, "h": 0.74, "anchor": "top-left" },
+          "keyframes": [
+            { "t": 630000, "box": { "x": 0.06, "y": 0.09, "w": 0.60, "h": 0.74 } },
+            { "t": 660000, "box": { "x": 0.10, "y": 0.12, "w": 0.52, "h": 0.66 } }
+          ],
+          "action": { "kind": "open" },
+          "list": true
+        }
+      ]
+    }
+  ],
+
+  "styles": {
+    "command": { "font": "JetBrains Mono", "size": 0.028, "color": "#F4F4F5", "background": "rgba(26,26,29,0.96)", "padding": [0.012, 0.016], "radius": 0.012 },
+    "link":    { "font": "Manrope", "size": 0.024, "color": "rgba(244,244,245,0.85)", "background": "rgba(20,20,22,0.88)", "padding": [0.010, 0.014], "radius": 0.010 },
+    "caption": { "font": "Manrope", "size": 0.022, "color": "rgba(244,244,245,0.85)", "background": "rgba(20,20,22,0.88)", "padding": [0.008, 0.012], "radius": 0.008 }
+  },
+
+  "chapters": [
+    { "start": 0,      "title": "Johdanto" },
+    { "start": 42000,  "title": "Pakettilistojen päivitys" },
+    { "start": 276200, "title": "Nginxin asennus" },
+    { "start": 390000, "title": "Konfiguraation rakenne" },
+    { "start": 560000, "title": "Käynnistys ja testaus" }
+  ],
+
+  "publish": {
+    "target": {
+      "kind": "s3",
+      "endpoint": "https://<account>.r2.cloudflarestorage.com",
+      "bucket": "laurilaine-media",
+      "prefix": "nginx/",
+      "publicBase": "https://media.laurilaine.example/nginx/"
+    },
+    "video": {
+      "ladder": [
+        { "h": 1080, "codec": "h264", "fps": 30 },
+        { "h": 1080, "codec": "av1",  "fps": 30 },
+        { "h": 720,  "codec": "h264", "fps": 30 }
+      ],
+      "mp4": { "h": 1080, "codec": "h264" }
+    },
+    "also": {
+      "youtubeMp4": true,
+      "embedSnippet": false
+    },
+    "last": {
+      "at": "2026-10-17T12:05:40Z",
+      "manifest": "https://media.laurilaine.example/nginx/nginx-tutorial.taso.json",
+      "page": "https://taso.video/w/01J9ZK7Q2M4F8T1XQ2V9H6N3PC"
+    }
+  }
+}

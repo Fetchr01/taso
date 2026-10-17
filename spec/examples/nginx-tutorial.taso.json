@@ -1,0 +1,179 @@
+{
+  "taso": "0.1",
+  "kind": "distribution",
+  "id": "01J9ZK7Q2M4F8T1XQ2V9H6N3PC",
+  "title": "Nginx asennus Ubuntu 24.04:lle",
+  "lang": "fi",
+  "creator": { "name": "Lauri Laine", "url": "https://laurilaine.example" },
+  "duration": 760000,
+
+  "video": {
+    "aspect": [16, 9],
+    "hls": "https://media.laurilaine.example/nginx/master.m3u8",
+    "mp4": "https://media.laurilaine.example/nginx/1080p.mp4",
+    "poster": "https://media.laurilaine.example/nginx/poster.avif"
+  },
+
+  "fonts": [
+    {
+      "family": "JetBrains Mono",
+      "src": "https://fonts.taso.video/jetbrains-mono/400-500.latin.woff2",
+      "weight": "400 500",
+      "fallback": "ui-monospace, SFMono-Regular, Menlo, monospace"
+    },
+    {
+      "family": "Manrope",
+      "src": "https://fonts.taso.video/manrope/400-700.latin.woff2",
+      "weight": "400 700",
+      "fallback": "system-ui, sans-serif"
+    }
+  ],
+
+  "styles": {
+    "command": {
+      "font": "JetBrains Mono",
+      "size": 0.028,
+      "color": "#F4F4F5",
+      "background": "rgba(26,26,29,0.96)",
+      "padding": [0.012, 0.016],
+      "radius": 0.012
+    },
+    "link": {
+      "font": "Manrope",
+      "size": 0.024,
+      "color": "rgba(244,244,245,0.85)",
+      "background": "rgba(20,20,22,0.88)",
+      "padding": [0.010, 0.014],
+      "radius": 0.010
+    },
+    "caption": {
+      "font": "Manrope",
+      "size": 0.022,
+      "color": "rgba(244,244,245,0.85)",
+      "background": "rgba(20,20,22,0.88)",
+      "padding": [0.008, 0.012],
+      "radius": 0.008
+    }
+  },
+
+  "assets": {
+    "nginx-config-diagram": {
+      "kind": "image",
+      "alt": "Kaavio nginx.conf-tiedoston rakenteesta: http, server ja location -lohkot",
+      "sizes": [
+        { "w": 960,  "h": 540,  "type": "image/avif", "src": "https://media.laurilaine.example/nginx/config-960.avif" },
+        { "w": 1920, "h": 1080, "type": "image/avif", "src": "https://media.laurilaine.example/nginx/config-1920.avif" },
+        { "w": 3840, "h": 2160, "type": "image/avif", "src": "https://media.laurilaine.example/nginx/config-3840.avif" },
+        { "w": 3840, "h": 2160, "type": "image/png",  "src": "https://media.laurilaine.example/nginx/config-3840.png" }
+      ]
+    }
+  },
+
+  "tracks": [
+    {
+      "id": "layers",
+      "kind": "overlay",
+      "items": [
+        {
+          "id": "cmd-update",
+          "type": "command",
+          "start": 42000,
+          "end": 88500,
+          "content": "sudo apt update",
+          "style": "command",
+          "box": { "x": 0.06, "y": 0.86, "w": 0.30, "h": 0.07, "anchor": "bottom-left" },
+          "action": { "kind": "copy" },
+          "list": true
+        },
+        {
+          "id": "cmd-install",
+          "type": "command",
+          "start": 276200,
+          "end": 358000,
+          "content": "sudo apt install nginx",
+          "style": "command",
+          "box": { "x": 0.06, "y": 0.86, "w": 0.34, "h": 0.07, "anchor": "bottom-left" },
+          "action": { "kind": "copy" },
+          "list": true
+        },
+        {
+          "id": "link-docs",
+          "type": "link",
+          "start": 390000,
+          "end": 505000,
+          "content": "nginx.org/docs",
+          "label": "Nginx-dokumentaatio",
+          "href": "https://nginx.org/en/docs/",
+          "style": "link",
+          "box": { "x": 0.96, "y": 0.09, "w": 0.18, "h": 0.06, "anchor": "top-right" },
+          "action": { "kind": "open" },
+          "list": true
+        },
+        {
+          "id": "img-config",
+          "type": "image",
+          "start": 412000,
+          "end": 468000,
+          "asset": "nginx-config-diagram",
+          "content": "Nginx-konfiguraation rakenne",
+          "box": { "x": 0.70, "y": 0.22, "w": 0.26, "h": 0.1463, "anchor": "top-left" },
+          "action": { "kind": "expand" },
+          "list": true
+        },
+        {
+          "id": "cmd-systemctl",
+          "type": "command",
+          "start": 560000,
+          "end": 620000,
+          "content": "sudo systemctl enable --now nginx",
+          "style": "command",
+          "box": { "x": 0.06, "y": 0.86, "w": 0.42, "h": 0.07, "anchor": "bottom-left" },
+          "action": { "kind": "copy" },
+          "list": true
+        },
+        {
+          "id": "mention-nginx",
+          "type": "mention",
+          "start": 700000,
+          "end": 740000,
+          "content": "@nginx",
+          "handle": { "platform": "x", "id": "nginx" },
+          "style": "caption",
+          "box": { "x": 0.06, "y": 0.09, "w": 0.12, "h": 0.05, "anchor": "top-left" },
+          "action": { "kind": "open" },
+          "list": true
+        },
+        {
+          "id": "hotspot-browser",
+          "type": "hotspot",
+          "start": 630000,
+          "end": 690000,
+          "render": false,
+          "content": "Avaa http://localhost selaimessa",
+          "href": "http://localhost",
+          "box": { "x": 0.06, "y": 0.09, "w": 0.60, "h": 0.74, "anchor": "top-left" },
+          "keyframes": [
+            { "t": 630000, "box": { "x": 0.06, "y": 0.09, "w": 0.60, "h": 0.74 } },
+            { "t": 660000, "box": { "x": 0.10, "y": 0.12, "w": 0.52, "h": 0.66 } }
+          ],
+          "action": { "kind": "open" },
+          "list": true
+        }
+      ]
+    }
+  ],
+
+  "chapters": [
+    { "start": 0,      "title": "Johdanto" },
+    { "start": 42000,  "title": "Pakettilistojen päivitys" },
+    { "start": 276200, "title": "Nginxin asennus" },
+    { "start": 390000, "title": "Konfiguraation rakenne" },
+    { "start": 560000, "title": "Käynnistys ja testaus" }
+  ],
+
+  "player": {
+    "list": true,
+    "listLinger": 8000,
+    "shortcuts": true
+  }
+}
