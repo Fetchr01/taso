@@ -11,7 +11,7 @@ Video on vain pohjakerros. Kaikki muu on **tasoja**.
 | Hakemisto | Sisältö | Tila |
 |---|---|---|
 | `spec/` | Formaatin määrittely: JSON Schema ja esimerkkimanifestit | v0.1 luonnos |
-| `packages/player/` | `<taso-player>`, upotettava Web Component, ei riippuvuuksia kehyksiin | prototyyppi |
+| `packages/player/` | `<taso-player>`, upotettava Web Component, ei riippuvuuksia kehyksiin, ~11 kt gz | prototyyppi, toimii demolla |
 
 Tulossa myöhemmin: työpöytäsovellus (nauhoitus, leikkaus, julkaisu) ja renderöijä (tavallinen MP4 samasta projektista).
 

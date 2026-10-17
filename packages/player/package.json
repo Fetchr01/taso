@@ -1,0 +1,36 @@
+{
+  "name": "@taso/player",
+  "version": "0.1.0",
+  "description": "<taso-player>: embeddable player for the Taso interactive video format",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Fetchr01/taso",
+    "directory": "packages/player"
+  },
+  "main": "./dist/taso-player.js",
+  "module": "./dist/taso-player.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/taso-player.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -p tsconfig.json --emitDeclarationOnly && vite build",
+    "test": "node --experimental-strip-types --test src/**/*.test.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "vite": "^5.4.0",
+    "vitest": "^2.1.0"
+  }
+}
